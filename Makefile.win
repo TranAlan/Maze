@@ -1,0 +1,57 @@
+# Project: Alan_Tran_Summative_2016
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o game.o maze.o character.o hero.o monster.o items.o link.o stack.o weapon.o $(RES)
+LINKOBJ  = main.o game.o maze.o character.o hero.o monster.o items.o link.o stack.o weapon.o $(RES)
+LIBS =  -L"D:/Dev-Cpp/lib"  
+INCS =  -I"D:/Dev-Cpp/include" 
+CXXINCS =  -I"D:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"D:/Dev-Cpp/include/c++/3.4.2/backward"  -I"D:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"D:/Dev-Cpp/include/c++/3.4.2"  -I"D:/Dev-Cpp/include" 
+BIN  = Alan_Tran_Summative_2016.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Alan_Tran_Summative_2016.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Alan_Tran_Summative_2016.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+game.o: game.cpp
+	$(CPP) -c game.cpp -o game.o $(CXXFLAGS)
+
+maze.o: maze.cpp
+	$(CPP) -c maze.cpp -o maze.o $(CXXFLAGS)
+
+character.o: character.cpp
+	$(CPP) -c character.cpp -o character.o $(CXXFLAGS)
+
+hero.o: hero.cpp
+	$(CPP) -c hero.cpp -o hero.o $(CXXFLAGS)
+
+monster.o: monster.cpp
+	$(CPP) -c monster.cpp -o monster.o $(CXXFLAGS)
+
+items.o: items.cpp
+	$(CPP) -c items.cpp -o items.o $(CXXFLAGS)
+
+link.o: link.cpp
+	$(CPP) -c link.cpp -o link.o $(CXXFLAGS)
+
+stack.o: stack.cpp
+	$(CPP) -c stack.cpp -o stack.o $(CXXFLAGS)
+
+weapon.o: weapon.cpp
+	$(CPP) -c weapon.cpp -o weapon.o $(CXXFLAGS)
