@@ -98,6 +98,10 @@ char user_movement;
    check_monsters_d();
    check_health_d();
  }
+ else{
+ 	system("cls");
+ 	themaze -> display_maze();
+ }
    
 }
 
